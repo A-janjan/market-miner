@@ -2,9 +2,9 @@
 
 MarketMiner is an end-to-end **CLI + Streamlit** project demonstrating web scraping, NLP/LLM query expansion, strict data validation, enrichment, scoring, deduplication, and interactive visualization for B2B prospect intelligence.
 
-Applied demo scenario: **find manufacturers of silicone insulators in Russia**, extract decision-makers, and validate contact data into a tiered Level 1 / Level 2 / Level 3 database.
+Applied demo scenario: **find manufacturers of Switches in Germany**, extract decision-makers, and validate contact data into a tiered Level 1 / Level 2 / Level 3 database.
 
-> ⚠️ Compliance note: this repository is designed as a portfolio/demo pipeline. Always respect robots.txt, site terms, privacy laws, rate limits, and anti-abuse rules. The included sample output is synthetic but realistic. Live scraping modules are conservative and configurable.
+> ⚠️ Compliance note: Always respect robots.txt, site terms, privacy laws, rate limits, and anti-abuse rules. The included sample output is synthetic but realistic. Live scraping modules are conservative and configurable.
 
 ## Enterprise-grade features showcased
 
@@ -16,7 +16,7 @@ Applied demo scenario: **find manufacturers of silicone insulators in Russia**, 
 
 ## Repository artifacts requested
 
-- `sample_output.json` — exactly 5 demo companies matching the silicone/Russia criteria.
+- `sample_output.json` — exactly 5 demo companies matching the Switches/Germany criteria.
 - `streamlit_app.py` — interactive dashboard with live logs and downloadable CSV/JSON.
 - `pipeline_logs/` — example trace logs explaining Level 1/2/3 classifications and skips.
 - `scrapers/yandex_maps.py` — Playwright scraper skeleton with infinite-scroll and pop-up handling.

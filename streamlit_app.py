@@ -29,20 +29,23 @@ CUSTOM_CSS = """
   background: white; box-shadow: 0 8px 30px rgba(15,23,42,.07); min-height: 126px;
 }
 .mm-card h3 { margin: 0 0 .35rem 0; font-size: 1rem; color:#0f172a; }
-.mm-card p { color:#475569; font-size:.88rem; margin:0; }
+.mm-card p { color:#475569; font-size:.88rem; margin:0; }    /* already dark */
 .mm-pill { display:inline-block; padding:.2rem .55rem; border-radius:999px; background:#e0f2fe; color:#075985; font-size:.75rem; font-weight:700; }
 .mm-log {
   border-left: 4px solid #2563eb; background:#f8fafc; padding:.7rem .9rem; border-radius:12px;
   margin:.35rem 0; font-size:.9rem;
+  color: #0f172a;   /* <--- ADD THIS: dark text for logs */
 }
 .mm-stage {
   text-align:center; padding:.8rem .35rem; border-radius:18px; background:#f1f5f9; border:1px solid #e2e8f0;
+  color: #000000;   /* <--- ADD THIS: black text for stages */
 }
 .mm-stage-active { background:#dbeafe; border-color:#60a5fa; color:#1d4ed8; font-weight:800; }
 .mm-stage-done { background:#dcfce7; border-color:#86efac; color:#166534; font-weight:800; }
 [data-testid="stMetricValue"] { font-size: 1.7rem; }
 </style>
 """
+
 
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 st.markdown(
@@ -58,10 +61,18 @@ st.markdown(
 
 with st.sidebar:
     st.header("🎛️ Controls")
-    keywords = st.text_input("Market keywords", value="Silicone Insulators")
-    geography = st.text_input("Target geography", value="Russia")
-    demo_mode = st.toggle("Safe demo mode", value=True, help="Uses curated sample candidates. Disable only for compliant live scraping.")
-    smtp_probe = st.toggle("SMTP handshake probe", value=False, help="Optional non-sending RCPT TO probe. Off by default.")
+    keywords = st.text_input("Market keywords", value="Switches")
+    geography = st.text_input("Target geography", value="Germany")
+    demo_mode = st.toggle(
+        "Safe demo mode",
+        value=True,
+        help="Uses curated sample candidates. Disable only for compliant live scraping.",
+    )
+    smtp_probe = st.toggle(
+        "SMTP handshake probe",
+        value=False,
+        help="Optional non-sending RCPT TO probe. Off by default.",
+    )
     st.divider()
     st.markdown("### Pipeline Sources")
     st.checkbox("Yandex Maps", value=True)
@@ -71,16 +82,24 @@ with st.sidebar:
     st.divider()
     run = st.button("🚀 Run Pipeline", type="primary", use_container_width=True)
 
-stage_names = ["Expand", "Scrape", "Classify", "Validate", "Enrich", "Export"]
-stage_cols = st.columns(len(stage_names))
-for col, stage in zip(stage_cols, stage_names):
-    col.markdown(f"<div class='mm-stage'>{stage}</div>", unsafe_allow_html=True)
 
 cards = st.columns(4)
-cards[0].markdown("<div class='mm-card'><h3>🌍 Query Expansion</h3><p>Russian translation and industry synonyms: HTV, RTV, siloxane, GOST.</p></div>", unsafe_allow_html=True)
-cards[1].markdown("<div class='mm-card'><h3>🕸️ Async Scraping</h3><p>Playwright-ready local directories, portals, and website crawl adapters.</p></div>", unsafe_allow_html=True)
-cards[2].markdown("<div class='mm-card'><h3>🧠 AI Classification</h3><p>Cost-aware manufacturer vs distributor inference before VIP LLM enrichment.</p></div>", unsafe_allow_html=True)
-cards[3].markdown("<div class='mm-card'><h3>✅ Verification</h3><p>Pydantic schema, fuzzy dedupe, syntax/MX/SMTP email validation hooks.</p></div>", unsafe_allow_html=True)
+cards[0].markdown(
+    "<div class='mm-card'><h3>🌍 Query Expansion</h3><p>Russian translation and industry synonyms: HTV, RTV, siloxane, GOST.</p></div>",
+    unsafe_allow_html=True,
+)
+cards[1].markdown(
+    "<div class='mm-card'><h3>🕸️ Async Scraping</h3><p>Playwright-ready local directories, portals, and website crawl adapters.</p></div>",
+    unsafe_allow_html=True,
+)
+cards[2].markdown(
+    "<div class='mm-card'><h3>🧠 AI Classification</h3><p>Cost-aware manufacturer vs distributor inference before VIP LLM enrichment.</p></div>",
+    unsafe_allow_html=True,
+)
+cards[3].markdown(
+    "<div class='mm-card'><h3>✅ Verification</h3><p>Pydantic schema, fuzzy dedupe, syntax/MX/SMTP email validation hooks.</p></div>",
+    unsafe_allow_html=True,
+)
 
 st.divider()
 progress = st.progress(0)
@@ -105,7 +124,9 @@ def flatten(records: list[dict]) -> pd.DataFrame:
                 "vip_count": len(vips),
                 "top_decision_maker": vips[0].get("name") if vips else None,
                 "top_role": vips[0].get("role") if vips else None,
-                "evidence": r["level_3_vip_verified"].get("extracted_manufacturing_evidence"),
+                "evidence": r["level_3_vip_verified"].get(
+                    "extracted_manufacturing_evidence"
+                ),
             }
         )
     return pd.DataFrame(rows)
@@ -122,8 +143,12 @@ async def run_pipeline_ui():
             continue
         event_count += 1
         ts = datetime.now().strftime("%H:%M:%S")
-        logs.append(f"<div class='mm-log'><b>{ts} · {item.level}</b><br>{item.message}</div>")
-        log_box.markdown("### 📟 Live pipeline logs" + "".join(logs[-12:]), unsafe_allow_html=True)
+        logs.append(
+            f"<div class='mm-log'><b>{ts} · {item.level}</b><br>{item.message}</div>"
+        )
+        log_box.markdown(
+            "### 📟 Live pipeline logs" + "".join(logs[-12:]), unsafe_allow_html=True
+        )
         progress.progress(min(event_count / 13, 1.0))
         await asyncio.sleep(0.05)
     progress.progress(1.0)
@@ -139,13 +164,17 @@ if run:
         with metric_box.container():
             m1, m2, m3, m4, m5 = st.columns(5)
             m1.metric("Companies", len(df))
-            m2.metric("Avg confidence", f"{df['score'].mean():.1f}" if not df.empty else "0")
+            m2.metric(
+                "Avg confidence", f"{df['score'].mean():.1f}" if not df.empty else "0"
+            )
             m3.metric("VIP contacts", int(df["vip_count"].sum()) if not df.empty else 0)
             m4.metric("Best score", int(df["score"].max()) if not df.empty else 0)
             m5.metric("Run log", log_file.name)
 
         with results_box:
-            tab1, tab2, tab3, tab4 = st.tabs(["📊 Dashboard", "🏢 Companies", "👤 VIP Contacts", "🧾 Raw JSON"])
+            tab1, tab2, tab3, tab4 = st.tabs(
+                ["📊 Dashboard", "🏢 Companies", "👤 VIP Contacts", "🧾 Raw JSON"]
+            )
 
             with tab1:
                 left, right = st.columns([1.15, 0.85])
@@ -159,13 +188,27 @@ if run:
                         title="Manufacturer confidence score",
                         color_continuous_scale="Blues",
                     )
-                    fig.update_layout(xaxis_tickangle=-22, height=430, margin=dict(l=20, r=20, t=55, b=90))
+                    fig.update_layout(
+                        xaxis_tickangle=-22,
+                        height=430,
+                        margin=dict(l=20, r=20, t=55, b=90),
+                    )
                     st.plotly_chart(fig, use_container_width=True)
                 with right:
-                    score_bins = pd.cut(df["score"], bins=[0, 84, 90, 100], labels=["Level 1", "Level 2", "Level 3"])
+                    score_bins = pd.cut(
+                        df["score"],
+                        bins=[0, 84, 90, 100],
+                        labels=["Level 1", "Level 2", "Level 3"],
+                    )
                     pie_df = score_bins.value_counts().reset_index()
                     pie_df.columns = ["tier", "count"]
-                    fig2 = px.pie(pie_df, values="count", names="tier", title="Tier distribution", hole=0.45)
+                    fig2 = px.pie(
+                        pie_df,
+                        values="count",
+                        names="tier",
+                        title="Tier distribution",
+                        hole=0.45,
+                    )
                     fig2.update_layout(height=430)
                     st.plotly_chart(fig2, use_container_width=True)
 
@@ -186,19 +229,39 @@ if run:
                                 "status": dm.get("email_verification_status"),
                             }
                         )
-                st.dataframe(pd.DataFrame(vip_rows), use_container_width=True, hide_index=True)
+                st.dataframe(
+                    pd.DataFrame(vip_rows), use_container_width=True, hide_index=True
+                )
 
             with tab4:
                 st.json(jsonable)
 
             st.subheader("⬇️ Export")
-            json_bytes = json.dumps(jsonable, ensure_ascii=False, indent=2).encode("utf-8")
+            json_bytes = json.dumps(jsonable, ensure_ascii=False, indent=2).encode(
+                "utf-8"
+            )
             csv_bytes = df.to_csv(index=False).encode("utf-8")
             c1, c2 = st.columns(2)
-            c1.download_button("Download JSON", data=json_bytes, file_name="marketminer_results.json", mime="application/json", use_container_width=True)
-            c2.download_button("Download CSV", data=csv_bytes, file_name="marketminer_results.csv", mime="text/csv", use_container_width=True)
+            c1.download_button(
+                "Download JSON",
+                data=json_bytes,
+                file_name="marketminer_results.json",
+                mime="application/json",
+                use_container_width=True,
+            )
+            c2.download_button(
+                "Download CSV",
+                data=csv_bytes,
+                file_name="marketminer_results.csv",
+                mime="text/csv",
+                use_container_width=True,
+            )
     except Exception as exc:
         st.error(f"Pipeline failed unexpectedly: {exc}")
-        st.info("Individual website/contact failures are normally marked Unverified. A top-level error usually means missing local dependencies.")
+        st.info(
+            "Individual website/contact failures are normally marked Unverified. A top-level error usually means missing local dependencies."
+        )
 else:
-    st.info("Use the sidebar and click **Run Pipeline** to start the graphical workflow.")
+    st.info(
+        "Use the sidebar and click **Run Pipeline** to start the graphical workflow."
+    )
