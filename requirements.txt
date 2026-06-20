@@ -1,0 +1,12 @@
+streamlit>=1.35
+pandas>=2.2
+pydantic>=2.7
+email-validator>=2.1
+dnspython>=2.6
+aiohttp>=3.9
+beautifulsoup4>=4.12
+rapidfuzz>=3.9
+playwright>=1.44
+plotly>=5.22
+python-dotenv>=1.0
+spacy>=3.7

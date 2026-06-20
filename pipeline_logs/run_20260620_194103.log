@@ -1,0 +1,42 @@
+[2026-06-20T19:41:03.564106Z] INFO: Starting MarketMiner pipeline for keywords='Silicone Insulators' geography='Russia'
+[2026-06-20T19:41:03.564219Z] NLP: Generated 12 expanded local-language queries
+{
+  "queries": [
+    "производство кремниевые изоляторы россия",
+    "кремниевые изоляторы производитель россия",
+    "кремниевые изоляторы завод россия",
+    "производство силиконовые изоляторы россия",
+    "силиконовые изоляторы производитель россия",
+    "силиконовые изоляторы завод россия",
+    "производство полимерные изоляторы россия",
+    "полимерные изоляторы производитель россия",
+    "полимерные изоляторы завод россия",
+    "производство композитные изоляторы россия",
+    "композитные изоляторы производитель россия",
+    "композитные изоляторы завод россия"
+  ]
+}
+[2026-06-20T19:41:03.564298Z] SCRAPER: Demo mode enabled: loading curated discovery candidates from sample_output.json
+[2026-06-20T19:41:03.565261Z] CLASSIFY: Accepted JSC SiliconTech: 2 manufacturing keywords; 2 silicone/insulator product mentions; score=94
+[2026-06-20T19:41:03.565377Z] CLASSIFY: Accepted Volga Polymer Insulators LLC: 3 manufacturing keywords; 4 silicone/insulator product mentions; score=91
+[2026-06-20T19:41:03.565479Z] CLASSIFY: Accepted Ural ElectroComposite Plant: 3 manufacturing keywords; 4 silicone/insulator product mentions; score=88
+[2026-06-20T19:41:03.565576Z] CLASSIFY: Accepted Siberian Insulator Systems AO: 3 manufacturing keywords; 2 silicone/insulator product mentions; score=85
+[2026-06-20T19:41:03.565668Z] CLASSIFY: Accepted Kazan Dielectric Materials Ltd: 3 manufacturing keywords; 1 silicone/insulator product mentions; score=82
+[2026-06-20T19:41:03.565686Z] CLASSIFY: Skipped ElectroTrade SPB: No manufacturing keywords found on homepage; distributor/reseller phrases dominate.
+[2026-06-20T19:41:03.565703Z] CLASSIFY: Skipped RusCable Logistics: Product catalog is cable accessories only; no silicone insulator evidence.
+[2026-06-20T19:41:03.566704Z] VALIDATION: Pydantic schema validation passed for 5 company records
+[2026-06-20T19:41:03.567542Z] DEDUP: Fuzzy domain/name deduplication retained 5 unique companies
+[2026-06-20T19:41:03.567586Z] EMAIL: Validating 14 email addresses with syntax + MX; SMTP probe=False
+[2026-06-20T19:41:03.567613Z] EMAIL: Demo mode: reused embedded syntax/MX verification statuses; no network DNS calls made
+{
+  "checked": 14,
+  "status_counts": {
+    "MX_record_exists": 5,
+    "SMTP_handshake_accepted": 1,
+    "Syntax_Validated": 3
+  }
+}
+[2026-06-20T19:41:03.567654Z] DONE: Pipeline completed; results ready for CSV/JSON export
+{
+  "log_file": "/home/user/pipeline_logs/run_20260620_194103.log"
+}

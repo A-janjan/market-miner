@@ -1,0 +1,185 @@
+[
+  {
+    "query_used": "производство кремниевых изоляторов",
+    "company_name": "JSC SiliconTech",
+    "market_confidence_score": 94,
+    "level_1_general": {
+      "legal_address": "Moscow Region, Elektrostal, 144000",
+      "industry_classification": "Electrical Insulator Manufacturing",
+      "estimated_employee_count": "150-250"
+    },
+    "level_2_contact": {
+      "website": "https://www.silicontech.ru",
+      "public_phone": "+7 495 555-0192",
+      "public_email": "info@silicontech.ru",
+      "socials": [
+        "https://www.linkedin.com/company/silicontech"
+      ]
+    },
+    "level_3_vip_verified": {
+      "decision_makers": [
+        {
+          "name": "Dmitry Volkov",
+          "role": "Commercial Director (Коммерческий директор)",
+          "direct_phone": "+7 916 123-4567",
+          "direct_email": "d.volkov@silicontech.ru",
+          "email_verification_status": "MX_record_exists",
+          "linkedin_profile": "https://linkedin.com/in/dmitryvolkov"
+        },
+        {
+          "name": "Elena Sidorova",
+          "role": "Head of Procurement",
+          "direct_phone": null,
+          "direct_email": "e.sidorova@silicontech.ru",
+          "email_verification_status": "Syntax_Validated",
+          "linkedin_profile": null
+        }
+      ],
+      "extracted_manufacturing_evidence": "Produces high-voltage silicone insulators using liquid injection molding. Certified to GOST R 52736-2007."
+    }
+  },
+  {
+    "query_used": "производство кремниевых изоляторов россия",
+    "company_name": "Volga Polymer Insulators LLC",
+    "market_confidence_score": 91,
+    "level_1_general": {
+      "legal_address": "Samara Region, Tolyatti, Industrial Zone 445000",
+      "industry_classification": "Polymer and Silicone Electrical Insulator Manufacturing",
+      "estimated_employee_count": "80-120"
+    },
+    "level_2_contact": {
+      "website": "https://volgapolymer.ru",
+      "public_phone": "+7 846 555-0138",
+      "public_email": "sales@volgapolymer.ru",
+      "socials": [
+        "https://www.linkedin.com/company/volga-polymer-insulators"
+      ]
+    },
+    "level_3_vip_verified": {
+      "decision_makers": [
+        {
+          "name": "Sergey Kuznetsov",
+          "role": "Technical Director (Технический директор)",
+          "direct_phone": "+7 927 220-1170",
+          "direct_email": "s.kuznetsov@volgapolymer.ru",
+          "email_verification_status": "MX_record_exists",
+          "linkedin_profile": "https://linkedin.com/in/sergey-kuznetsov-polymer"
+        },
+        {
+          "name": "Maria Orlova",
+          "role": "Export Sales Manager",
+          "direct_phone": null,
+          "direct_email": "m.orlova@volgapolymer.ru",
+          "email_verification_status": "Syntax_Validated",
+          "linkedin_profile": null
+        }
+      ],
+      "extracted_manufacturing_evidence": "Homepage and product catalog mention HTV silicone sheds, composite insulator rods, in-house molding line, and ISO 9001 quality control."
+    }
+  },
+  {
+    "query_used": "силиконовые изоляторы производитель",
+    "company_name": "Ural ElectroComposite Plant",
+    "market_confidence_score": 88,
+    "level_1_general": {
+      "legal_address": "Sverdlovsk Region, Yekaterinburg, Mashinostroiteley 620000",
+      "industry_classification": "Composite High-Voltage Insulator Production",
+      "estimated_employee_count": "250-400"
+    },
+    "level_2_contact": {
+      "website": "https://ural-electrocomposite.ru",
+      "public_phone": "+7 343 555-0144",
+      "public_email": "office@ural-electrocomposite.ru",
+      "socials": []
+    },
+    "level_3_vip_verified": {
+      "decision_makers": [
+        {
+          "name": "Alexey Morozov",
+          "role": "Chief Engineer (Главный инженер)",
+          "direct_phone": "+7 912 555-0186",
+          "direct_email": "a.morozov@ural-electrocomposite.ru",
+          "email_verification_status": "MX_record_exists",
+          "linkedin_profile": null
+        }
+      ],
+      "extracted_manufacturing_evidence": "Products page lists silicone rubber composite insulators for 35-220 kV lines, factory test lab photographs, and production capacity of 45,000 units/year."
+    }
+  },
+  {
+    "query_used": "htv силикон изоляторы завод",
+    "company_name": "Siberian Insulator Systems AO",
+    "market_confidence_score": 85,
+    "level_1_general": {
+      "legal_address": "Novosibirsk, Stantsionnaya Industrial District, 630108",
+      "industry_classification": "HTV Silicone Insulator and Cable Accessory Manufacturing",
+      "estimated_employee_count": "120-180"
+    },
+    "level_2_contact": {
+      "website": "https://sibinsulator.ru",
+      "public_phone": "+7 383 555-0166",
+      "public_email": "info@sibinsulator.ru",
+      "socials": [
+        "https://www.linkedin.com/company/siberian-insulator-systems"
+      ]
+    },
+    "level_3_vip_verified": {
+      "decision_makers": [
+        {
+          "name": "Irina Belova",
+          "role": "Head of B2B Sales (Руководитель отдела продаж)",
+          "direct_phone": "+7 913 772-9041",
+          "direct_email": "i.belova@sibinsulator.ru",
+          "email_verification_status": "SMTP_handshake_accepted",
+          "linkedin_profile": "https://linkedin.com/in/irinabelova-b2b"
+        },
+        {
+          "name": "Pavel Andreev",
+          "role": "Production Manager",
+          "direct_phone": null,
+          "direct_email": "p.andreev@sibinsulator.ru",
+          "email_verification_status": "MX_record_exists",
+          "linkedin_profile": null
+        }
+      ],
+      "extracted_manufacturing_evidence": "Contact and About pages state a Novosibirsk production site, HTV silicone compounding, hydrophobicity tests, and GOST conformity declarations."
+    }
+  },
+  {
+    "query_used": "rtv htv силоксан изоляторы производство",
+    "company_name": "Kazan Dielectric Materials Ltd",
+    "market_confidence_score": 82,
+    "level_1_general": {
+      "legal_address": "Republic of Tatarstan, Kazan, Tekhnicheskaya Street 420054",
+      "industry_classification": "Silicone Dielectric Materials and Insulator Components",
+      "estimated_employee_count": "60-90"
+    },
+    "level_2_contact": {
+      "website": "https://kazandielektrik.ru",
+      "public_phone": "+7 843 555-0119",
+      "public_email": "commercial@kazandielektrik.ru",
+      "socials": []
+    },
+    "level_3_vip_verified": {
+      "decision_makers": [
+        {
+          "name": "Nikolai Petrov",
+          "role": "General Director (Генеральный директор)",
+          "direct_phone": "+7 917 301-2285",
+          "direct_email": "n.petrov@kazandielektrik.ru",
+          "email_verification_status": "Syntax_Validated",
+          "linkedin_profile": null
+        },
+        {
+          "name": "Oksana Fedorova",
+          "role": "Procurement Manager",
+          "direct_phone": null,
+          "direct_email": "o.fedorova@kazandielektrik.ru",
+          "email_verification_status": "MX_record_exists",
+          "linkedin_profile": null
+        }
+      ],
+      "extracted_manufacturing_evidence": "Catalog references RTV/HTV siloxane formulations, insulator housings, compression molding, and batch certificates for dielectric strength testing."
+    }
+  }
+]

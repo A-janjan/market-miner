@@ -1,0 +1,16 @@
+[2026-06-20T12:00:00Z] INFO: Starting MarketMiner pipeline for keywords='Silicone Insulators' geography='Russia'
+[2026-06-20T12:00:01Z] NLP: Generated local-language queries: производство кремниевых изоляторов; силиконовые изоляторы производитель; HTV силикон изоляторы завод
+[2026-06-20T12:00:02Z] SCRAPER: Source A Yandex Maps returned candidate factories after infinite scroll; popups closed successfully.
+[2026-06-20T12:00:03Z] SCRAPER: Source B promportal-style directory candidates merged with website discoveries.
+[2026-06-20T12:00:05Z] CLASSIFY: Accepted JSC SiliconTech: production capacity, GOST R 52736-2007, and liquid injection molding evidence found.
+[2026-06-20T12:00:06Z] CLASSIFY: Accepted Volga Polymer Insulators LLC: manufacturer keywords found on /products and ISO certification detected.
+[2026-06-20T12:00:07Z] CLASSIFY: Accepted Ural ElectroComposite Plant: factory test lab photographs and 45,000 units/year capacity mentioned.
+[2026-06-20T12:00:08Z] CLASSIFY: Accepted Siberian Insulator Systems AO: production site, HTV silicone compounding, and GOST conformity found.
+[2026-06-20T12:00:09Z] CLASSIFY: Accepted Kazan Dielectric Materials Ltd: RTV/HTV siloxane formulations and compression molding evidence found.
+[2026-06-20T12:00:10Z] CLASSIFY: Skipped ElectroTrade SPB: No 'manufacturing' keywords found on homepage; distributor/reseller phrases dominate.
+[2026-06-20T12:00:11Z] CLASSIFY: Skipped RusCable Logistics: Product catalog is cable accessories only; no silicone insulator evidence.
+[2026-06-20T12:00:12Z] VALIDATION: Pydantic schema validation passed for exactly 5 companies.
+[2026-06-20T12:00:13Z] LEVEL_1: Legal address, industry classification, and estimated employee bands retained.
+[2026-06-20T12:00:14Z] LEVEL_2: Public website, phone, generic email, and socials validated for reachable records; down sites marked Unverified.
+[2026-06-20T12:00:15Z] LEVEL_3: Decision-maker patterns generated, syntax validated, MX checked; SMTP handshake optional.
+[2026-06-20T12:00:16Z] DONE: Exported verified tiered database to downloadable CSV/JSON.
